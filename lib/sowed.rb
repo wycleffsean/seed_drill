@@ -3,14 +3,14 @@ require "sowed/version"
 class Sow
   attr_reader :model
 
-  def self.create(relation, fields = {}, &block)
-    new(relation, fields, &block).model
+  def self.create(relation, fixed_fields = {}, &block)
+    new(relation, fixed_fields, &block).model
   end
 
-  def initialize(relation, fields = {}, &block)
+  def initialize(relation, fixed_fields = {}, &block)
     @rel = relation.where(nil)
     @klass = @rel.klass
-    @model = first_or_create(fields)
+    @model = first_or_create(fixed_fields)
     instance_eval(&block) unless block.nil?
     @model.save
   end
@@ -36,9 +36,9 @@ class Sow
   def attributes
     case
       when @rel.class.ancestors.include?(Enumerable)
-        @rel.klass.first.attributes.keys.map(&:to_sym)
+        @rel.klass.new.attributes.keys.map(&:to_sym)
       else
-        @rel.attributes.keys.map(&:to_sym)
+        @rel.new.attributes.keys.map(&:to_sym)
     end
   end
 
