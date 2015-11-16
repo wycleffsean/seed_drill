@@ -20,8 +20,8 @@ class Sow
     when *attributes
       @model.send("#{method_name}=", *args, &block)
     when *associations.keys.map(&:to_sym)
-      model = self.class.new(@model.send(method_name), *args, &block).model
-      many_to_many(model, associations[method_name.to_s])
+      model = self.class.new(association_class(method_name), *args, &block).model
+      @model.send("#{method_name}=", model)
     else
       super
     end
@@ -53,10 +53,7 @@ class Sow
     end
   end
 
-  def many_to_many(model, association)
-    if association[:relation] == Mongoid::Relations::Referenced::ManyToMany
-      list = @model.send(association[:name])
-      list.push model unless list.include?(model)
-    end
+  def association_class(field)
+      Kernel.const_get(associations[field.to_s].options[:class_name])
   end
 end

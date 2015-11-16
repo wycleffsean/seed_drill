@@ -1,6 +1,14 @@
 module SharedExamples
   def teardown
-    klass.delete_all
+    user_class.delete_all
+  end
+
+  def user_class
+    self.class::User
+  end
+
+  def comment_class
+    self.class::Comment
   end
 
   def fields
@@ -11,22 +19,30 @@ module SharedExamples
   end
 
   def test_create_returns_object
-    refute_nil Sow.create(klass, fields)
+    refute_nil Sow.create(user_class, fields)
   end
 
   def test_creates_new_record
-    Sow.create(klass, fields)
+    Sow.create(user_class, fields)
 
-    assert_equal 1, klass.count
+    assert_equal 1, user_class.count
   end
 
   def test_alters_existing_record
-    klass.create(fields)
-    Sow.create(klass, email: fields[:email]) do
+    user_class.create(fields)
+    Sow.create(user_class, email: fields[:email]) do
       name 'Bryan Adams'
     end
 
-    assert_equal 1, klass.count
-    assert_equal 'Bryan Adams', klass.first.name
+    assert_equal 1, user_class.count
+    assert_equal 'Bryan Adams', user_class.first.name
+  end
+
+  def test_creates_belongs_to_association
+    comment = Sow.create(comment_class, body: 'abc') do
+      user email: 'guy@example.com'
+    end
+
+    refute_nil comment.user
   end
 end

@@ -22,15 +22,24 @@ class ActiveRecordTest < MiniTest::Test
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         email CHARACTER VARYING(255),
         name CHARACTER VARYING(255)
-      )
+      );
+    SQL
+
+    ActiveRecord::Base.connection.execute <<-SQL
+      CREATE TABLE IF NOT EXISTS comments
+      (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER,
+        body CHARACTER VARYING(255)
+      );
     SQL
   end
 
-  def klass
-    @klass ||= Class.new(ActiveRecord::Base).tap do |k|
-      k.instance_eval do
-        self.table_name = 'users'
-      end
-    end
+  class User < ActiveRecord::Base
+    has_many :comments, class_name: 'ActiveRecordTest::Comment'
+  end
+
+  class Comment < ActiveRecord::Base
+    belongs_to :user, class_name: 'ActiveRecordTest::User'
   end
 end
