@@ -19,18 +19,18 @@ module SharedExamples
   end
 
   def test_create_returns_object
-    refute_nil Sow.create(user_class, fields)
+    refute_nil Sow.ensure(user_class, fields)
   end
 
   def test_creates_new_record
-    Sow.create(user_class, fields)
+    Sow.ensure(user_class, fields)
 
     assert_equal 1, user_class.count
   end
 
   def test_alters_existing_record
     user_class.create(fields)
-    Sow.create(user_class, email: fields[:email]) do
+    Sow.ensure(user_class, email: fields[:email]) do
       name 'Bryan Adams'
     end
 
@@ -39,8 +39,10 @@ module SharedExamples
   end
 
   def test_creates_belongs_to_association
-    comment = Sow.create(comment_class, body: 'abc') do
-      user email: 'guy@example.com'
+    comment = Sow.ensure(comment_class, body: 'abc') do
+      user do
+        email 'guy@example.com'
+      end
     end
 
     refute_nil comment.user
