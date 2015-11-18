@@ -15,7 +15,7 @@ module Sow
     Sower.new(relation_or_klass, &block).model
   end
 
-  class Sower
+  class Sower # :nodoc:
     attr_reader :model
 
     def initialize(klass, fixed_fields = nil, &block)

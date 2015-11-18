@@ -1,5 +1,5 @@
 module Sow
-  class Fields
+  class Fields # :nodoc:
     attr_reader :fixed
 
     def initialize(args = nil, &block)
@@ -22,7 +22,7 @@ module Sow
 
   private
 
-  class Hasher
+  class Hasher # :nodoc:
     attr_reader :hash
     def method_missing(key, *value, &block)
       @hash ||= Hash.new
