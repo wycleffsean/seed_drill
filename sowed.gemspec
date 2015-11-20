@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["wycleffsean@gmail.com"]
 
   spec.summary       = %q{Idempotent seeds for your ruby project}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.description   = %q{Idempotent seeds for your ruby project}
   spec.homepage      = "https://github.com/wycleffsean/sowed"
   spec.license       = "MIT"
 
