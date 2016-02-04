@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UtilsTest < MiniTest::Test
   def setup
-    @fields = Sow::Fields.new(d: true) do |fixed|
+    @fields = SeedDrill::Fields.new(d: true) do |fixed|
       fixed.a true
       b true
       c do

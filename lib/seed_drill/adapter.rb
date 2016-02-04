@@ -1,4 +1,4 @@
-module Sow
+module SeedDrill
   class Adapter
     def self.get(klass)
       relation = klass.where(nil)

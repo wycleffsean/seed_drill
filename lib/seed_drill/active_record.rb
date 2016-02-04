@@ -1,4 +1,4 @@
-module Sow
+module SeedDrill
   class ActiveRecord < Adapter
     attr_reader :model
 

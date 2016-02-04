@@ -1,4 +1,4 @@
-module Sow
+module SeedDrill
   class Fields # :nodoc:
     attr_reader :fixed
 

@@ -3,7 +3,7 @@ require "seed_drill/utils"
 require "seed_drill/adapter"
 require "seed_drill/active_record"
 
-module Sow
+module SeedDrill
   ###
   # Sow.ensure(User) do |fixed|
   #   fixed.email     'guy@something.com'
@@ -11,7 +11,7 @@ module Sow
   #   state_province  :NC
   # end
   ###
-  def self.ensure(relation_or_klass, fixed_fields = nil, &block)
+  def self.sow(relation_or_klass, fixed_fields = nil, &block)
     Sower.new(relation_or_klass, &block).model
   end
 

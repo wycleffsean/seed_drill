@@ -19,18 +19,18 @@ module SharedExamples
   end
 
   def test_create_returns_object
-    refute_nil Sow.ensure(user_class, fields)
+    refute_nil SeedDrill.sow(user_class, fields)
   end
 
   def test_creates_new_record
-    Sow.ensure(user_class, fields)
+    SeedDrill.sow(user_class, fields)
 
     assert_equal 1, user_class.count
   end
 
   def test_alters_existing_record
     user_class.create(fields)
-    Sow.ensure(user_class, email: fields[:email]) do
+    SeedDrill.sow(user_class, email: fields[:email]) do
       name 'Bryan Adams'
     end
 
@@ -39,7 +39,7 @@ module SharedExamples
   end
 
   def test_creates_belongs_to_association
-    comment = Sow.ensure(comment_class, body: 'abc') do
+    comment = SeedDrill.sow(comment_class, body: 'abc') do
       user do
         email 'guy@example.com'
       end

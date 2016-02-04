@@ -25,7 +25,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-Sow.ensure(Bar) do |fixed|
+SeedDrill.sow(Bar) do |fixed|
   fixed.name  'Cheers' # should never change
   street      '112 ½ Beacon Street'
   city        'Boston'
@@ -34,9 +34,9 @@ Sow.ensure(Bar) do |fixed|
   end
 end
 
-user = Sow.ensure(User, email: 'bryan.adams@gmail.ca')
+user = SeedDrill.sow(User, email: 'bryan.adams@gmail.ca')
 # or
-Sow.ensure(User) {|fixed| fixed.email 'bryan.adams@gmail.ca')
+SeedDrill.sow(User) {|fixed| fixed.email 'bryan.adams@gmail.ca')
 ```
 
 ## Development
