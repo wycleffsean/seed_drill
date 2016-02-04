@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.org/wycleffsean/sowed.svg)](https://travis-ci.org/wycleffsean/sowed)
-[![Code Climate](https://codeclimate.com/github/wycleffsean/sowed/badges/gpa.svg)](https://codeclimate.com/github/wycleffsean/sowed)
-[![Test Coverage](https://codeclimate.com/github/wycleffsean/sowed/badges/coverage.svg)](https://codeclimate.com/github/wycleffsean/sowed/coverage)
+[![Build Status](https://travis-ci.org/wycleffsean/seed_drill.svg)](https://travis-ci.org/wycleffsean/seed_drill)
+[![Code Climate](https://codeclimate.com/github/wycleffsean/seed_drill/badges/gpa.svg)](https://codeclimate.com/github/wycleffsean/seed_drill)
+[![Test Coverage](https://codeclimate.com/github/wycleffsean/seed_drill/badges/coverage.svg)](https://codeclimate.com/github/wycleffsean/seed_drill/coverage)
 
-# Sowed
+# Seed Drill
 
 Idempotent seeds for your ruby projects
 
@@ -11,7 +11,7 @@ Idempotent seeds for your ruby projects
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'sowed'
+gem 'seed_drill'
 ```
 
 And then execute:
@@ -20,7 +20,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install sowed
+    $ gem install seed_drill
 
 ## Usage
 
@@ -47,7 +47,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/wycleffsean/sowed. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](CODE_OF_CONDUCT.md) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/wycleffsean/seed_drill. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](CODE_OF_CONDUCT.md) code of conduct.
 
 
 ## License

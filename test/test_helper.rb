@@ -3,5 +3,5 @@ CodeClimate::TestReporter.start
 
 require 'minitest/autorun'
 require 'yaml'
-require 'sowed'
+require 'seed_drill'
 require 'shared_examples'

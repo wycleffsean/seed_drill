@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'sowed/version'
+require 'seed_drill/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "sowed"
-  spec.version       = Sowed::VERSION
+  spec.name          = "seed_drill"
+  spec.version       = SeedDrill::VERSION
   spec.authors       = ["Sean Carey"]
   spec.email         = ["wycleffsean@gmail.com"]
 
   spec.summary       = %q{Idempotent seeds for your ruby project}
   spec.description   = %q{Idempotent seeds for your ruby project}
-  spec.homepage      = "https://github.com/wycleffsean/sowed"
+  spec.homepage      = "https://github.com/wycleffsean/seed_drill"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or

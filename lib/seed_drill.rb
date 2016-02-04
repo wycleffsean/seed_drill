@@ -1,7 +1,7 @@
-require "sowed/version"
-require "sowed/utils"
-require "sowed/adapter"
-require "sowed/active_record"
+require "seed_drill/version"
+require "seed_drill/utils"
+require "seed_drill/adapter"
+require "seed_drill/active_record"
 
 module Sow
   ###
