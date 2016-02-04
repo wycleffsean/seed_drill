@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/wycleffsean/seed_drill.svg)](https://travis-ci.org/wycleffsean/seed_drill)
-[![Code Climate](https://codeclimate.com/github/wycleffsean/seed_drill/badges/gpa.svg)](https://codeclimate.com/github/wycleffsean/seed_drill)
-[![Test Coverage](https://codeclimate.com/github/wycleffsean/seed_drill/badges/coverage.svg)](https://codeclimate.com/github/wycleffsean/seed_drill/coverage)
+[![Build Status](https://travis-ci.org/wycleffsean/sowed.svg)](https://travis-ci.org/wycleffsean/sowed)
+[![Code Climate](https://codeclimate.com/github/wycleffsean/sowed/badges/gpa.svg)](https://codeclimate.com/github/wycleffsean/sowed)
+[![Test Coverage](https://codeclimate.com/github/wycleffsean/sowed/badges/coverage.svg)](https://codeclimate.com/github/wycleffsean/sowed/coverage)
 
 # Seed Drill
 
